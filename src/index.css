@@ -1,0 +1,303 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #2c2a2a;
+}
+.app-container {
+  height: 400px;
+  width: 300px;
+  background: #2c2a2a;
+  border-radius: 20px;
+  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
+}
+
+.temperature-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.temperature-display {
+  display: flex;
+  border-radius: 50%;
+  color: #ffffff;
+  height: 220px;
+  width: 220px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  border: 3px #ffffff solid;
+  transition: background 0.5s;
+}
+
+button {
+  border-radius: 100px;
+  height: 80px;
+  width: 80px;
+  font-size: 32px;
+  color: #ffffff;
+  background: rgb(105, 104, 104);
+  border: 2px #ffffff solid;
+}
+
+button:hover {
+  background: rgb(184, 184, 184);
+  cursor: pointer;
+  border-color: #48cbcf;
+background: linear-gradient(to bottom, #519ec7, #71bfc4);
+transform: scale(1.1);
+cursor: pointer;
+color: #add8d8;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.neutral {
+  background: rgb(184, 184, 184);
+}
+
+.cold {
+  background: #035aa6;
+  animation: cold-temperature 1s ease-in-out infinite;
+}
+
+.hot {
+  background: #ff5200;
+}
+
+
+/* interactive */
+
+body {
+  transition: background-color 0.5s;
+}
+body:hover .app-container {
+  background-color: #3b3b3b;
+}
+
+body {
+  transition: color 0.5s;
+}
+body:hover {
+  color: #000000;
+}
+
+.app-container {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.app-container:hover {
+  transform: scale(1.1);
+}
+
+.app-container {
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+.app-container.clicked {
+  transform: rotate(360deg);
+}
+
+.app-container:hover {
+  background: linear-gradient(to bottom, #585858, #525253);
+}
+.app-container {
+  cursor: pointer;
+}
+
+
+/* For cold temp */
+
+
+
+
+.temperature-display.cold{
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+.temperature-display.clicked.cold {
+  transform: rotate(360deg);
+}
+.temperature-display.cold {
+  border-color: #ffffff;
+  transition: border-color 0.5s;
+}
+.temperature-display:hover.cold {
+  border-color: #48a0cf;
+}
+.temperature-display:hover.cold {
+  background: linear-gradient(to bottom, #519ec7, #8371c4);
+}
+.temperature-display.cold {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.temperature-display:hover.cold {
+  transform: scale(1.1);
+}
+
+.temperature-display:hover.cold {
+  cursor: pointer;
+}
+.temperature-display:hover.cold {
+  color: #adc9d8;
+}
+
+
+
+/* for Hot Temp */
+
+.temperature-display.hot{
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+.temperature-display.clicked.hot {
+  transform: rotate(360deg);
+}
+.temperature-display.hot {
+  border-color: #ffffff;
+  transition: border-color 0.5s;
+}
+.temperature-display:hover.hot {
+  border-color: #cf4848;
+}
+.temperature-display:hover.hot {
+  background: linear-gradient(to bottom, #c7516e, #c4718d);
+}
+.temperature-display.hot {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.temperature-display:hover.hot {
+  transform: scale(1.1);
+}
+
+.temperature-display:hover.hot {
+  cursor: pointer;
+}
+.temperature-display:hover.hot {
+  color: #d8adad;
+}
+
+
+/* For neutral temp */
+
+.temperature-display.neutral{
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+.temperature-display.clicked.neutral {
+  transform: rotate(360deg);
+}
+.temperature-display.neutral {
+  border-color: #ffffff;
+  transition: border-color 0.5s;
+}
+.temperature-display:hover.neutral {
+  border-color: #48cbcf;
+}
+.temperature-display:hover.neutral {
+  background: linear-gradient(to bottom, #519ec7, #71bfc4);
+}
+.temperature-display.neutral {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.temperature-display:hover.neutral {
+  transform: scale(1.1);
+}
+
+.temperature-display:hover.neutral {
+  cursor: pointer;
+}
+.temperature-display:hover.neutral {
+  color: #add8d8;
+}
+
+
+/* For Button  */
+
+
+
+/* The animation keyframes */
+@keyframes cold-temperature {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(60deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* The element to apply the animation to */
+.hot {
+  animation: hot-temperature 1s ease-in-out infinite;
+}
+
+/* The animation keyframes */
+@keyframes hot-temperature {
+  0% {
+    filter: brightness(100%);
+  }
+  50% {
+    filter: brightness(150%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+/* The element to apply the animation to */
+.neutral {
+  animation: neutral-temperature 2s ease-in-out infinite;
+}
+
+/* The animation keyframes */
+@keyframes neutral-temperature {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* The element to apply the animation to */
+.neutral {
+  animation: neutral-temperature 2s ease-in-out infinite;
+}
+
+/* The animation keyframes */
+@keyframes neutral-temperature {
+  0% {
+    color: #000000;
+  }
+  50% {
+    color: #777777;
+  }
+  100% {
+    color: #000000;
+  }
+}
